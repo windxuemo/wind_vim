@@ -35,6 +35,9 @@ set fillchars=vert:\ ,stl:\ ,stlnc:\
 " 高亮显示匹配的括号
 set showmatch
 
+" 相对行号
+set relativenumber
+
 " 语法开启
 syntax on
 " 侦测文件类型
@@ -71,6 +74,7 @@ if version >= 603
     set encoding=utf-8
 endif
 
+nmap <Leader>sr :source ~/.vimrc<CR>
 
 
 " 保存全局变量
@@ -88,7 +92,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 " 打开文件回到上次光标所在地方
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 
@@ -145,7 +149,7 @@ endfunction
 " 新建.c,.h,.sh,.java文件，自动插入文件头 
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()" 
 " 定义函数SetTitle，自动插入文件头 
-func SetTitle() 
+func! SetTitle() 
     "如果文件类型为.sh文件 
     if &filetype == 'sh' 
         call setline(1,"\#!/bin/bash") 
@@ -271,7 +275,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " Solarized is a sixteen color palette
-Plugin 'altercation/solarized'
+" Plugin 'altercation/solarized'
 
 " c++ 语法高亮
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -384,6 +388,9 @@ Plugin 'vim-scripts/sessionman.vim'
 " 分屏终端
 Plugin 'pazzavita/ConqueTerm'
 
+" python format pep8
+Plugin 'tell-k/vim-autopep8'
+
 " python mode
 " Plugin 'klen/python-mode'
 
@@ -416,7 +423,12 @@ endif
 
 set t_Co=256
 let g:solarized_termcolors=256
-colorscheme solarized         " 颜色主题为solarized
+
+" colorscheme solarized" 颜色主题为solarized
+" colorscheme molokai " 颜色主题为molokai
+colorscheme vmolokai " 颜色主题为vmolokai
+" colorscheme codeschool " 颜色主题为codeschool
+" colorscheme jellybeans " 颜色主题为codeschool
 " ================================================
 
 " ||||||||||||||||||||||||||||||||||||||||||||||||
@@ -430,6 +442,14 @@ let g:cpp_concepts_highlight = 1
 " vim-indent-guides  可视化缩进
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
+" 自动选择颜色
+" let g:indent_guides_auto_colors = 1
+" 配置颜色
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=4
+
+
 " 从第二层开始可视化显示缩进
 let g:indent_guides_start_level=2
 " 色块宽度
@@ -476,7 +496,7 @@ let g:SignatureMap = {
 " 打开/关闭标签列表
 nnoremap <silent> <Leader>tl :TagbarToggle<CR>
 " 选中标签之后，自动将标签列表关闭
-let g:tagbar_autoclose=1
+" let g:tagbar_autoclose=1
 " tagbar 子窗口中不显示冗余帮助信息 
 let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
