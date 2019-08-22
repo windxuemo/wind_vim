@@ -41,6 +41,10 @@ function! commandt#private#Refresh() abort
   ruby $command_t.refresh
 endfunction
 
+function! commandt#private#RemoveBuffer() abort
+  ruby $command_t.remove_buffer
+endfunction
+
 function! commandt#private#ToggleFocus() abort
   ruby $command_t.toggle_focus
 endfunction
@@ -86,5 +90,16 @@ function! commandt#private#RunAutocmd(cmd) abort
     execute 'silent doautocmd <nomodeline> User ' . a:cmd
   else
     execute 'silent doautocmd User ' . a:cmd
+  endif
+endfunction
+
+function! commandt#private#capture(cmd) abort
+  if exists('*execute')
+    return execute(a:cmd)
+  else
+    redir => l:capture
+    silent execute a:cmd
+    redir END
+    return l:capture
   endif
 endfunction
