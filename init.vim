@@ -126,5 +126,7 @@ endfor
 " 新建文件自动定位到最后一行
 autocmd BufNewFile * normal G
 
+set shell=/bin/sh
+
 
 " highlight Cursor guifg=white guibg=#808080

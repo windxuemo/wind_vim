@@ -67,7 +67,7 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 
 Plug 'plasticboy/vim-markdown'
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'unblevable/quick-scope'
