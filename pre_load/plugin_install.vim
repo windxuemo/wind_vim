@@ -46,8 +46,6 @@ Plug 'sjl/gundo.vim'
 " 快速移动
 Plug 'easymotion/vim-easymotion'
 
-" 语法检查
-Plug 'dense-analysis/ale'
 
 " 选中字符串并搜索，可以自动解析特殊符号
 Plug 'luochen1990/select-and-search'
@@ -56,14 +54,7 @@ Plug 'luochen1990/select-and-search'
 " Plug 'bsdelf/bufferhint'
 
 " 自动弹出补全列表
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-
-Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/deoplete-clangx'
-" Plug 'Chiel92/vim-autoformat'
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " 快速输入结对符
 Plug 'jiangmiao/auto-pairs'
@@ -89,7 +80,6 @@ Plug 'pelodelfuego/vim-swoop'
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 
