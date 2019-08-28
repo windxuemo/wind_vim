@@ -1,4 +1,11 @@
 {
+
+    "suggest.noselect": false,
+    "suggest.enablePreview": true,
+    "suggest.minTriggerInputLength": 1,
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+
+
     "languageserver": {
         "ccls": {
             "command": "ccls",
@@ -9,7 +16,9 @@
                     "directory": "/tmp/ccls"
                 }
             }
+
         },
+
 
         "python": {
             "command": "python3",

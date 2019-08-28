@@ -1,6 +1,11 @@
-nmap <silent> <M-j> <Plug>(coc-definition)
-nmap <silent> <M-k> <Plug>(coc-references)
+nmap <silent> <M-c> <Plug>(coc-declaration)
+nmap <silent> <M-d> <Plug>(coc-definition)
+nmap <silent> <M-r> <Plug>(coc-references)
+nmap <silent> <M-i> <Plug>(coc-implementation)
+nmap <silent> <M-f>  <Plug>(coc-fix-current)
 nn <silent> K :call CocActionAsync('doHover')<cr>
+
+
 
 set updatetime=300
 au CursorHold * sil call CocActionAsync('highlight')
@@ -32,4 +37,5 @@ nn <silent> cs :call CocLocations('ccls','$ccls/member',{'kind':2})<cr>
 nmap <silent> ct <Plug>(coc-type-definition)<cr>
 nn <silent> cv :call CocLocations('ccls','$ccls/vars')<cr>
 nn <silent> cV :call CocLocations('ccls','$ccls/vars',{'kind':1})<cr>
+
 
