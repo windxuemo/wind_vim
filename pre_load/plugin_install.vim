@@ -27,9 +27,9 @@ Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 
 " 模板补全
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 " 预定义补全模板
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 
 " 文件列表
 Plug 'scrooloose/nerdtree'
@@ -75,10 +75,18 @@ Plug 'rhysd/clever-f.vim'
 
 Plug 'tpope/vim-repeat'
 " Plug 'nightsense/snow'
-Plug 'pelodelfuego/vim-swoop'
 
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
+Plug 'Yggdroot/LeaderF'
+
+" If you don't have nodejs and yarn
+" use pre build
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+" If you have nodejs and yarn
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+'
 
 
 
