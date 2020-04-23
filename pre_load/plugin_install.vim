@@ -66,7 +66,7 @@ Plug 'alvan/vim-closetag'
 
 Plug 'tpope/vim-surround'
 
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 " Plug 'vim-scripts/YankRing.vim'
 
 Plug 'ntpeters/vim-better-whitespace'
@@ -80,6 +80,7 @@ Plug 'pelodelfuego/vim-swoop'
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 
 
