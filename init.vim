@@ -101,7 +101,7 @@ endif
 
 
 " 开启html补全
-set omnifunc=htmlcomplete#CompleteTags
+" set omnifunc=htmlcomplete#CompleteTags
 
 
 for f in split(glob('~/.config/nvim/ui/*.vim'), '\n')

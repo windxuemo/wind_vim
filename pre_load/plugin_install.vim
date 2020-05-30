@@ -20,9 +20,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 " 标记书签
 Plug 'kshenoy/vim-signature'
 
-" 多光标编辑
-" Plug 'terryma/vim-multiple-cursors'
-
 " 快速注释
 Plug 'scrooloose/nerdcommenter'
 
@@ -46,7 +43,6 @@ Plug 'sjl/gundo.vim'
 " 快速移动
 Plug 'easymotion/vim-easymotion'
 
-
 " 选中字符串并搜索，可以自动解析特殊符号
 Plug 'luochen1990/select-and-search'
 
@@ -62,25 +58,31 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'gregsexton/MatchTag'
 Plug 'andymass/vim-matchup'
 
+" 自动关闭 html 的tags
 Plug 'alvan/vim-closetag'
 
 Plug 'tpope/vim-surround'
 
-" Plug 'plasticboy/vim-markdown'
-" Plug 'vim-scripts/YankRing.vim'
-
+" 自动去除无效空格
 Plug 'ntpeters/vim-better-whitespace'
+
 " Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 
 Plug 'tpope/vim-repeat'
 " Plug 'nightsense/snow'
-Plug 'pelodelfuego/vim-swoop'
+" Plug 'pelodelfuego/vim-swoop'
 
+" 多光标编辑
 Plug 'mg979/vim-visual-multi'
+
 Plug 'liuchengxu/vista.vim'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+
+Plug 'rhysd/git-messenger.vim'
+
 
 
 

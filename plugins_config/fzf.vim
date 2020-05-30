@@ -60,14 +60,19 @@ command! -bang -nargs=* Rg
             \           : fzf#vim#with_preview('right:50%:hidden', '?'),
             \   <bang>0)
 
+
+command! -bang Lines
+            \ call fzf#vim#lines({'options': '--reverse'})
+
+command! -bang BLines
+            \ call fzf#vim#buffer_lines({'options': '--reverse'})
+
 " Likewise, Files command with preview window
 command! -bang -nargs=? -complete=dir Files
             \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 
 
-" 让输入上方，搜索列表在下方
-let $FZF_DEFAULT_OPTS = '--layout=reverse'
 
 " 打开 fzf 的方式选择 floating window
 let g:fzf_layout = { 'window': 'call OpenFloatingWin()' }
@@ -102,3 +107,14 @@ function! OpenFloatingWin()
                 \ norelativenumber
                 \ signcolumn=no
 endfunction
+
+
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>fl :BLines<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fa :Lines<CR>
+nnoremap <Leader>ft :Tags<CR>
+
+
+" 让输入上方，搜索列表在下方
+let $FZF_DEFAULT_OPTS = '--layout=reverse'
