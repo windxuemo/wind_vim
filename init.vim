@@ -92,7 +92,18 @@ endif
 " 带有如下符号的单词不要被换行分割
 set iskeyword+=_,$,@,%,#,-
 
+" 折叠
+set foldmethod=manual
 
+
+" let xml_syntax_folding=1      " XML
+" let javaScript_fold=1         " JavaScript
+" let perl_fold=1               " Perl
+" let php_folding=1             " PHP
+" let r_syntax_folding=1        " R
+" let ruby_fold=1               " Ruby
+" let sh_fold_enabled=1         " sh
+" let vimsyn_folding='af'       " Vim script
 
 " 打开文件回到上次光标所在地方
 if has("autocmd")
@@ -131,4 +142,4 @@ endfor
 " 新建文件自动定位到最后一行
 autocmd BufNewFile * normal G
 
-set shell=/bin/sh
+set shell=/bin/bash

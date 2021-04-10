@@ -2,7 +2,6 @@
 
 " ===============================================
 " " 快速移动
-" <Leader>f{char} to move to {char}
 " map  <Leader>f <Plug>(easymotion-bd-f)
 nmap ; <Plug>(easymotion-overwin-f)
 

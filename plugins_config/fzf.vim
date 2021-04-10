@@ -53,12 +53,17 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 command! -bang Colors
             \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
+" command! -bang -nargs=* Rg
+"             \ call fzf#vim#grep(
+"             \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+"             \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"             \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"             \   <bang>0)
+
 command! -bang -nargs=* Rg
-            \ call fzf#vim#grep(
-            \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-            \   <bang>0 ? fzf#vim#with_preview('up:60%')
-            \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-            \   <bang>0)
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 
 command! -bang Lines
@@ -109,12 +114,3 @@ function! OpenFloatingWin()
 endfunction
 
 
-nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader>fl :BLines<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fa :Lines<CR>
-nnoremap <Leader>ft :Tags<CR>
-
-
-" 让输入上方，搜索列表在下方
-let $FZF_DEFAULT_OPTS = '--layout=reverse'
